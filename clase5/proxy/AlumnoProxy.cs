@@ -14,46 +14,77 @@ public class AlumnoProxy : IAlumno
     }
     public int GetCalificacion()
     {
-        return AlumnoReal!.GetCalificacion();
-    }
-
-    public void SetCalificacion(int calificacion)
-    {
-        AlumnoReal!.SetCalificacion(calificacion);
-    }
-
-    public int ResponderPregunta(int pregunta)
-    {
-
         if (AlumnoReal == null)
         {
             AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
         }
-        return AlumnoReal!.ResponderPregunta(pregunta);
+        return AlumnoReal.GetCalificacion();
+    }
+
+    public void SetCalificacion(int calificacion)
+    {
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        AlumnoReal.SetCalificacion(calificacion);
+    }
+
+    public int ResponderPregunta(int pregunta)
+    {
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.ResponderPregunta(pregunta);
     }
     public string MostrarCalificacion()
     {
-        return $"(Proxy) {AlumnoReal!.MostrarCalificacion()}";
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return $"(Proxy) {AlumnoReal.MostrarCalificacion()}";
     }
     public int GetLegajo()
     {
-        return AlumnoReal!.GetLegajo();
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.GetLegajo();
     }
     public override string ToString()
     {
-        return AlumnoReal!.ToString();
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.ToString();
     }
     public void PrestarAtencion()
     {
-        AlumnoReal!.PrestarAtencion();
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        AlumnoReal.PrestarAtencion();
     }
     public void Distraerse()
     {
-        AlumnoReal!.Distraerse();
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        AlumnoReal.Distraerse();
     }
     public void Actualizar(Observado o)
     {
-        AlumnoReal!.Actualizar(o);
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        AlumnoReal.Actualizar(o);
     }
     public string GetNombre()
     {
@@ -61,23 +92,43 @@ public class AlumnoProxy : IAlumno
     }
     public int GetDni()
     {
-        return AlumnoReal!.GetDni();
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.GetDni();
     }
     public float GetPromedio()
     {
-        return AlumnoReal!.GetPromedio();
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.GetPromedio();
     }
 
     public bool SosIgual(Comparable c)
     {
-        return AlumnoReal!.SosIgual(c);
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.SosIgual(c);
     }
     public bool SosMenor(Comparable c)
     {
-        return AlumnoReal!.SosMenor(c);
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.SosMenor(c);
     }
     public bool SosMayor(Comparable c)
     {
-        return AlumnoReal!.SosMayor(c);
+        if (AlumnoReal == null)
+        {
+            AlumnoReal = (IAlumno)FabricaDeComparables.CrearAleatorio(2);
+        }
+        return AlumnoReal.SosMayor(c);
     }
 }
